@@ -1,9 +1,11 @@
 import http from "./http";
+import { ui } from "./ui";
 
 const getPosts = async () => {
   try {
-    console.log(" get posts:>> ", await http.getPosts());
-    return await http.getPosts();
+    const data = await http.getPosts();
+    console.log("get posts :>> ", data);
+    ui.showPosts(data);
   } catch (error) {
     console.log(error);
   }

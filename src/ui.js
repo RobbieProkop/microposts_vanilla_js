@@ -7,4 +7,10 @@ class UI {
     this.postSubmit = document.querySelector(".post-submit");
     this.formState = "add";
   }
+
+  showPosts(posts) {
+    console.log("posts :>> ", posts);
+  }
 }
+
+export const ui = new UI();
