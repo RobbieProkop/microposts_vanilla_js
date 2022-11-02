@@ -2,7 +2,7 @@ import http from "./http";
 
 const getPosts = async () => {
   try {
-    console.log(" :>> ", await http.getPosts());
+    console.log(" get posts:>> ", await http.getPosts());
     return await http.getPosts();
   } catch (error) {
     console.log(error);
