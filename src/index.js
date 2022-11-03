@@ -79,6 +79,14 @@ const enableEdit = async (e) => {
     ui.fillForm(data);
   }
 };
+//cancel edit state
+const cancelEdit = (e) => {
+  e.preventDefault();
+
+  if (e.target.classList.contains("post-cancel")) {
+    ui.changeFormState("add");
+  }
+};
 
 //get posts on DOm load
 document.addEventListener("DOMContentLoaded", getPosts);
@@ -92,6 +100,4 @@ document.querySelector("#posts").addEventListener("click", deletePost);
 document.querySelector("#posts").addEventListener("click", enableEdit);
 
 //listen for cancel edit post
-// document
-//   .querySelector(".post-cancel")
-//   .addEventListener("click", changeFormState("add"));
+document.querySelector(".card-form").addEventListener("click", cancelEdit);

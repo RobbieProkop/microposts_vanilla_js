@@ -86,7 +86,7 @@ class UI {
   changeFormState(state) {
     if (state !== "edit") {
       this.postSubmit.textContent = "Post It!";
-      this.postSubmit.ClassName = "post-submit btn btn-primary mt-3";
+      this.postSubmit.className = "post-submit btn btn-primary mt-3";
 
       //clear id from hidden field
       this.clearIdInput();
