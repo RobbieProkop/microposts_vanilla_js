@@ -39,10 +39,12 @@ const deletePost = async (e) => {
       const id = e.target.parentElement.dataset.id;
       if (confirm("Are you sure you want to delete?")) {
         const res = await http.deletePost(id);
+        ui.showAlert("Post Deleted", "alert alert-success");
         getPosts();
       }
     }
   } catch (error) {
+    ui.showAlert("Post could not be deleted", "alert alert-danger");
     console.log("error :>> ", error);
   }
 };
