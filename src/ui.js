@@ -77,8 +77,25 @@ class UI {
     this.changeFormState("edit");
   }
 
+  //clear Id input
+  clearIdInput() {
+    this.idInput.value = "";
+  }
+
   //change the form state
   changeFormState(state) {
+    if (state !== "edit") {
+      this.postSubmit.textContent = "Post It!";
+      this.postSubmit.ClassName = "post-submit btn btn-primary mt-3";
+
+      //clear id from hidden field
+      this.clearIdInput();
+      //clear text fields
+      this.clearFields();
+    }
+    if (document.querySelector(".post-cancel")) {
+      document.querySelector(".post-cancel").remove();
+    }
     if (state === "edit") {
       this.postSubmit.textContent = "Update Post";
       this.postSubmit.className = "post-submit btn btn-warning mt-3";
