@@ -35,7 +35,13 @@ const deletePost = async (e) => {
   try {
     e.preventDefault();
 
-    console.log('"deleting" :>> ', "deleting");
+    if (e.target.parentElement.classList.contains("delete")) {
+      const id = e.target.parentElement.dataset.id;
+      if (confirm("Are you sure you want to delete?")) {
+        const res = await http.deletePost(id);
+        getPosts();
+      }
+    }
   } catch (error) {
     console.log("error :>> ", error);
   }
