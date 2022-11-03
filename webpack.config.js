@@ -5,9 +5,9 @@ const BundleAnalyzerPlugin =
 
 module.exports = {
   mode: "development",
-  // entry: {
-  //   bundle: path.resolve(__dirname, "src/index.js"),
-  // },
+  entry: {
+    bundle: path.resolve(__dirname, "src/index.js"),
+  },
   entry: ["regenerator-runtime/runtime.js", "./src/index.js"],
   output: {
     path: path.resolve(__dirname, "dist"),
