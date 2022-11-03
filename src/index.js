@@ -30,6 +30,20 @@ const submitPost = async () => {
   }
 };
 
+//delete
+const deletePost = async (e) => {
+  try {
+    e.preventDefault();
+
+    console.log('"deleting" :>> ', "deleting");
+  } catch (error) {
+    console.log("error :>> ", error);
+  }
+};
+
+//listen for delete
+document.querySelector("#posts").addEventListener("click", deletePost);
+
 //get posts on DOm load
 document.addEventListener("DOMContentLoaded", getPosts);
 
