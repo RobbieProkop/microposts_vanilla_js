@@ -16,6 +16,7 @@ const submitPost = async () => {
   try {
     const title = document.querySelector("#title");
     const body = document.querySelector("#body");
+    const id = document.querySelector("#id").value;
     title.classList.remove("is-invalid");
     body.classList.remove("is-invalid");
     if (!title.value || !body.value) {
@@ -33,9 +34,21 @@ const submitPost = async () => {
       title: title.value,
       body: body.value,
     };
-    const res = await http.createPost(data);
-    ui.showAlert("Post Added", "alert alert-success");
-    ui.clearFields();
+
+    //check for id to either create or update post
+    if (!id) {
+      const res = await http.createPost(data);
+      console.log("Post Added:>> ", res);
+      ui.showAlert("Post Added", "alert alert-success");
+      ui.clearFields();
+      getPosts();
+      return;
+    }
+    //update post
+    const res = await http.editPost(id, data);
+    console.log("Post Updated :>> ", res);
+    ui.showAlert("Post Updated", "alert alert-success");
+    ui.changeFormState("add");
     getPosts();
   } catch (error) {
     console.log(error);
