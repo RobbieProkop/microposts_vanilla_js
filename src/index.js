@@ -11,5 +11,25 @@ const getPosts = async () => {
   }
 };
 
+// submit and edit post
+const submitPost = async () => {
+  try {
+    const title = document.querySelector("#title").value;
+    const body = document.querySelector("#body").value;
+    const data = {
+      title,
+      body,
+    };
+    const res = await http.createPost(data);
+    console.log("submitPost :>> ", res);
+    getPosts();
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 //get posts on DOm load
 document.addEventListener("DOMContentLoaded", getPosts);
+
+//listen for add post
+document.querySelector(".post-submit").addEventListener("click", submitPost);
