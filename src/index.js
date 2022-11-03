@@ -22,6 +22,8 @@ const submitPost = async () => {
     };
     const res = await http.createPost(data);
     console.log("submitPost :>> ", res);
+    ui.showAlert("Post Added", "alert alert-success");
+    ui.clearFields();
     getPosts();
   } catch (error) {
     console.log(error);
