@@ -54,6 +54,17 @@ const enableEdit = async (e) => {
   e.preventDefault();
   if (e.target.parentElement.classList.contains("edit")) {
     const id = e.target.parentElement.dataset.id;
+    const title =
+      e.target.parentElement.previousElementSibling.previousElementSibling
+        .textContent;
+    const body = e.target.parentElement.previousElementSibling.textContent;
+    const data = {
+      id,
+      title,
+      body,
+    };
+    //fill form with current post
+    ui.fillForm(data);
   }
 };
 

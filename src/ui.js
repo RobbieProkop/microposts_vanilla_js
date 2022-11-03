@@ -8,6 +8,7 @@ class UI {
     this.formState = "add";
   }
 
+  //geting all posts
   showPosts(posts) {
     let output = "";
 
@@ -65,6 +66,13 @@ class UI {
   clearFields() {
     this.titleInput.value = "";
     this.bodyInput.value = "";
+  }
+
+  //used to fill the form on edit state
+  fillForm(data) {
+    this.titleInput.value = data.title;
+    this.bodyInput.value = data.body;
+    this.idInput.value = data.id;
   }
 }
 
