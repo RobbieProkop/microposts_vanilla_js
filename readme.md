@@ -8,7 +8,7 @@
 
 <img src="https://github.com/RobbieProkop/microposts_vanilla_js/blob/master/assets/home.png" />
 
-## Add Ppst
+## Add Post
 
 <img src="https://github.com/RobbieProkop/microposts_vanilla_js/blob/master/assets/add_post.png" />
 
