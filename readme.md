@@ -16,7 +16,7 @@
 
 <img src="https://github.com/RobbieProkop/microposts_vanilla_js/blob/master/assets/update_post.png" />
 
-## Error
+## Form Validation Error
 
 <img src="https://github.com/RobbieProkop/microposts_vanilla_js/blob/master/assets/error.png" />
 
