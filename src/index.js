@@ -49,11 +49,21 @@ const deletePost = async (e) => {
   }
 };
 
-//listen for delete
-document.querySelector("#posts").addEventListener("click", deletePost);
+//edit state
+const enableEdit = async (e) => {
+  e.preventDefault();
+  if (e.target.parentElement.classList.contains("edit")) {
+    const id = e.target.parentElement.dataset.id;
+  }
+};
 
 //get posts on DOm load
 document.addEventListener("DOMContentLoaded", getPosts);
-
 //listen for add post
 document.querySelector(".post-submit").addEventListener("click", submitPost);
+
+//listen for delete
+document.querySelector("#posts").addEventListener("click", deletePost);
+
+//listen for edit state
+document.querySelector("#posts").addEventListener("click", enableEdit);
