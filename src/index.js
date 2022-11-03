@@ -14,14 +14,26 @@ const getPosts = async () => {
 // submit and edit post
 const submitPost = async () => {
   try {
-    const title = document.querySelector("#title").value;
-    const body = document.querySelector("#body").value;
+    const title = document.querySelector("#title");
+    const body = document.querySelector("#body");
+    title.classList.remove("is-invalid");
+    body.classList.remove("is-invalid");
+    if (!title.value || !body.value) {
+      if (!title.value) {
+        title.classList.add("is-invalid");
+      }
+      if (!body.value) {
+        body.classList.add("is-invalid");
+      }
+      ui.showAlert("Please add all fields", "alert alert-danger");
+      return;
+    }
+
     const data = {
-      title,
-      body,
+      title: title.value,
+      body: body.value,
     };
     const res = await http.createPost(data);
-    console.log("submitPost :>> ", res);
     ui.showAlert("Post Added", "alert alert-success");
     ui.clearFields();
     getPosts();
@@ -78,3 +90,8 @@ document.querySelector("#posts").addEventListener("click", deletePost);
 
 //listen for edit state
 document.querySelector("#posts").addEventListener("click", enableEdit);
+
+//listen for cancel edit post
+// document
+//   .querySelector(".post-cancel")
+//   .addEventListener("click", changeFormState("add"));
