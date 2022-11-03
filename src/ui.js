@@ -73,6 +73,31 @@ class UI {
     this.titleInput.value = data.title;
     this.bodyInput.value = data.body;
     this.idInput.value = data.id;
+
+    this.changeFormState("edit");
+  }
+
+  //change the form state
+  changeFormState(state) {
+    if (state === "edit") {
+      this.postSubmit.textContent = "Update Post";
+      this.postSubmit.className = "post-submit btn btn-warning mt-3";
+
+      //create cancel btn
+      const button = document.createElement("button");
+      button.className = "post-cancel btn btn-dark mt-3";
+      button.appendChild(document.createTextNode("Cancel Edit"));
+
+      //get parent to insert into dom
+      const cardForm = document.querySelector(".card-form");
+
+      // span to insert before
+      const formEnd = document.querySelector(".form-end");
+
+      //insert cancel button
+      cardForm.insertBefore(button, formEnd);
+    }
+    this.formState = state;
   }
 }
 
