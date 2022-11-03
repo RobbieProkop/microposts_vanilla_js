@@ -3,6 +3,8 @@ import { ui } from "./ui";
 
 const getPosts = async () => {
   try {
+    ui.clearError();
+
     const data = await http.getPosts();
     console.log("get posts :>> ", data);
     ui.showPosts(data);
@@ -17,8 +19,6 @@ const submitPost = async () => {
     const title = document.querySelector("#title");
     const body = document.querySelector("#body");
     const id = document.querySelector("#id").value;
-    title.classList.remove("is-invalid");
-    body.classList.remove("is-invalid");
     if (!title.value || !body.value) {
       if (!title.value) {
         title.classList.add("is-invalid");
@@ -77,6 +77,7 @@ const deletePost = async (e) => {
 //edit state
 const enableEdit = async (e) => {
   e.preventDefault();
+  ui.clearError();
   if (e.target.parentElement.classList.contains("edit")) {
     const id = e.target.parentElement.dataset.id;
     const title =

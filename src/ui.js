@@ -63,6 +63,13 @@ class UI {
     }
   }
 
+  clearError() {
+    const title = document.querySelector("#title");
+    const body = document.querySelector("#body");
+    title.classList.remove("is-invalid");
+    body.classList.remove("is-invalid");
+  }
+
   clearFields() {
     this.titleInput.value = "";
     this.bodyInput.value = "";

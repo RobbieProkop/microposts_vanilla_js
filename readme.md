@@ -12,8 +12,12 @@
 
 <img src="https://github.com/RobbieProkop/microposts_vanilla_js/blob/master/assets/add_post.png" />
 
+## Update Post
+
+<img src="https://github.com/RobbieProkop/microposts_vanilla_js/blob/master/assets/update_post.png" />
+
 ## Error
 
-<img src="https://github.com/RobbieProkop/microposts_vanilla_js/blob/master/assets.error.png" />
+<img src="https://github.com/RobbieProkop/microposts_vanilla_js/blob/master/assets/error.png" />
 
 <p>Bug needed to be fixed: bootstrap file not compiling to dist folder. need to manually copy it there.</p>
